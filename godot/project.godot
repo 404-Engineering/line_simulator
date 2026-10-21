@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Line Simulator"
+config/description="Physics-based simulator for packaging and filling lines, driven by Allen-Bradley PLCs over EtherNet/IP."
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+
+[autoload]
+
+SimClock="*res://core/sim_clock.gd"
+SignalBus="*res://core/signal_bus.gd"
+Metrics="*res://core/metrics.gd"
+BridgeClient="*res://core/bridge_client.gd"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+common/physics_ticks_per_second=100
+common/physics_jitter_fix=0.0
+
+[rendering]
+
+renderer/rendering_method="forward_plus"

@@ -1,0 +1,15 @@
+# Non-geometry parameters for Line 2. Geometry lives in godot/scenes/lines/line2.tscn.
+# All values are placeholders until measured on the real line.
+
+name: line2
+stations:
+  depalletizer:
+    rate_per_min: 0        # TBD
+  filler:
+    rate_per_min: 0        # TBD
+    heads: 0               # TBD
+conveyors:
+  depal_to_filler:
+    length_m: 0.0          # TBD
+    speed_m_s: 0.0         # TBD
+    accumulation_capacity: 0

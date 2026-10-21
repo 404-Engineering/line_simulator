@@ -1,0 +1,27 @@
+# Tag map for Line 2: simulator signal <-> PLC tag.
+# Placeholder addresses and tag names; replace from the controller tag exports in plc/exports/.
+#
+# direction is from the simulator's point of view:
+#   input  = sensor value the sim writes to the PLC
+#   output = actuator command the PLC writes to the sim
+
+plcs:
+  lcs:
+    driver: logix
+    host: 192.168.1.10
+    slot: 0
+  depalletizer:
+    driver: logix
+    host: 192.168.1.11
+    slot: 0
+  filler:
+    driver: logix
+    host: 192.168.1.12
+    slot: 0
+
+bindings:
+  - {signal: depal.outfeed_pe,    plc: depalletizer, tag: Outfeed_PE,     type: BOOL, direction: input}
+  - {signal: depal.conv_run,      plc: depalletizer, tag: Conv_Run_Cmd,   type: BOOL, direction: output}
+  - {signal: filler.infeed_pe,    plc: filler,       tag: Infeed_PE,      type: BOOL, direction: input}
+  - {signal: filler.infeed_speed, plc: filler,       tag: Infeed_Spd_Cmd, type: REAL, direction: output}
+  - {signal: lcs.line_run,        plc: lcs,          tag: Line_Run,       type: BOOL, direction: output}

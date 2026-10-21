@@ -1,0 +1,16 @@
+# A recipe = one bottle format + the line settings that go with it.
+# Batch runs iterate over recipes and write one CSV per run to runs/.
+
+name: example_500ml
+bottle:
+  product_scene: res://products/bottle_050.tscn
+  height_mm: 0        # TBD
+  diameter_mm: 0      # TBD
+  mass_empty_g: 0     # TBD
+  mass_full_g: 0      # TBD
+line_overrides:
+  filler.rate_per_min: 0
+  depal_to_filler.speed_m_s: 0.0
+run:
+  seed: 1
+  sim_minutes: 60
